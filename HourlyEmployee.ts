@@ -1,20 +1,25 @@
-import { Employees } from "./Employees";
+import { Employees } from './Employees';
+interface EmployeeOptions {
+  FirstName: string;
+  LastName: string;
+  SocialSecurityNumber: string;
+  hoursWorked: number;
+  hourlyWage: number;
+}
 class HourlyEmployee extends Employees {
   private hourlyWage!: number;
   private hoursWorked!: number;
-  constructor(
-    FirstName: string,
-    LastName: string,
-    SocialSecurityNumber: string,
-    hourlyWage: number,
-    hoursWorked: number
-  ) {
-    super(FirstName, LastName, SocialSecurityNumber);
-    this.hourlyWage = hourlyWage;
-    if (hoursWorked < 0 || hoursWorked > 168 || hourlyWage < 0) {
-      throw new Error("IllegalArgument");
+  constructor(params: EmployeeOptions) {
+    super(params);
+    this.hourlyWage = params.hourlyWage;
+    if (
+      params.hoursWorked < 0 ||
+      params.hoursWorked > 168 ||
+      params.hourlyWage < 0
+    ) {
+      throw new Error('IllegalArgument');
     } else {
-      this.hoursWorked = hoursWorked;
+      this.hoursWorked = params.hoursWorked;
     }
   }
   earnings(): number {
@@ -29,10 +34,10 @@ class HourlyEmployee extends Employees {
     this.hourlyWage += this.hourlyWage * percent;
   }
   toString(): string {
-    return `Commissioned Employee: ${this.getFirstName()} ${this.getLastName()} with ssn: ${this.getSocialSecurityNumber()}\n
-    Hourly Wage:${this.hourlyWage}\n
-    Hours Worked:${this.hoursWorked}\n
-    Earnings:${this.earnings()}\n`;
+    return `Hourly Employee: ${this.getFirstName()} ${this.getLastName()} with ssn: ${this.getSocialSecurityNumber()}
+Hourly Wage:${this.hourlyWage}
+Hours Worked:${this.hoursWorked}
+Earnings:${this.earnings()}\n`;
   }
 }
 

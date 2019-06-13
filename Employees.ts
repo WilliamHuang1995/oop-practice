@@ -1,3 +1,8 @@
+interface EmployeeOptions {
+  FirstName: string;
+  LastName: string;
+  SocialSecurityNumber: string;
+}
 abstract class Employees {
   private FirstName!: string;
   private LastName!: string;
@@ -6,14 +11,10 @@ abstract class Employees {
   /**
    *
    */
-  constructor(
-    FirstName: string,
-    LastName: string,
-    SocialSecurityNumber: string
-  ) {
-    this.FirstName = FirstName;
-    this.LastName = LastName;
-    this.SocialSecurityNumber = SocialSecurityNumber;
+  constructor(params: EmployeeOptions) {
+    this.FirstName = params.FirstName;
+    this.LastName = params.LastName;
+    this.SocialSecurityNumber = params.SocialSecurityNumber;
   }
 
   getFirstName(): string {
