@@ -1,4 +1,4 @@
-import { Employees } from "./Employees";
+import { Employees } from './Employees';
 class BasePlusCommissionEmployee extends Employees {
   private grossSales!: number;
   private commissionRate!: number;
@@ -9,7 +9,7 @@ class BasePlusCommissionEmployee extends Employees {
     SocialSecurityNumber: string,
     grossSales: number,
     commissionRate: number,
-    salary: number
+    salary: number,
   ) {
     super(FirstName, LastName, SocialSecurityNumber);
     this.grossSales = grossSales;
@@ -25,11 +25,11 @@ class BasePlusCommissionEmployee extends Employees {
     this.salary += this.salary * percent;
   }
   toString(): string {
-    return `Commissioned Employee: ${this.getFirstName()} ${this.getLastName()} with ssn: ${this.getSocialSecurityNumber()}\nGross Sales:${
-      this.grossSales
-    }\nCommission Rate:${this.commissionRate}\nwith Base Salary of: ${
-      this.salary
-    }\nEarnings:${this.earnings()}\n`;
+    return `Commissioned Employee: ${this.getFirstName()} ${this.getLastName()} with ssn: ${this.getSocialSecurityNumber()}\n
+    Gross Sales:${this.grossSales}\n
+    Commission Rate:${this.commissionRate}\n
+    with Base Salary of: ${this.salary}\n
+    Earnings:${this.earnings()}\n`;
   }
 }
 

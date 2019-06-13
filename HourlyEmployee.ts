@@ -29,9 +29,10 @@ class HourlyEmployee extends Employees {
     this.hourlyWage += this.hourlyWage * percent;
   }
   toString(): string {
-    return `Commissioned Employee: ${this.getFirstName()} ${this.getLastName()} with ssn: ${this.getSocialSecurityNumber()}\nHourly Wage:${
-      this.hourlyWage
-    }\nHours Worked:${this.hoursWorked}\nEarnings:${this.earnings()}\n`;
+    return `Commissioned Employee: ${this.getFirstName()} ${this.getLastName()} with ssn: ${this.getSocialSecurityNumber()}\n
+    Hourly Wage:${this.hourlyWage}\n
+    Hours Worked:${this.hoursWorked}\n
+    Earnings:${this.earnings()}\n`;
   }
 }
 
