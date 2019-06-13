@@ -1,6 +1,6 @@
 # OOP-PRACTICE
 
-## Just a repo for me to practice Object Oriented Programming
+Just a repo for me to practice Object Oriented Programming
 
 ### Abstract Class:
 
